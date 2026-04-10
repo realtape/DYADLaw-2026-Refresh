@@ -69,14 +69,17 @@ nav a:hover{color:var(--blue)}
 .hero-img img{width:100%;height:auto;display:block}
 .hero-badge{position:absolute;bottom:-12px;left:16px;right:16px;background:rgba(255,255,255,.95);backdrop-filter:blur(8px);padding:.8rem 1.2rem;border-radius:12px;font-size:.9rem;color:var(--text);box-shadow:var(--shadow)}
 
-/* ---- Intake Section ---- */
+/* ---- Intake / Contact Section ---- */
 .intake-section{background:var(--cream);padding:5rem 0}
-.intake-wrap{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
-.intake-info h2{margin-bottom:.75rem}
-.intake-info p{color:var(--muted);margin-bottom:1.5rem;max-width:420px}
-.intake-perks{list-style:none;padding:0;margin:0}
-.intake-perks li{padding:.5rem 0;padding-left:1.6rem;position:relative;color:var(--text);font-size:.95rem}
-.intake-perks li::before{content:"✓";position:absolute;left:0;color:var(--blue);font-weight:700}
+.intake-3col{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.5rem;align-items:start}
+.intake-biz h2{margin-bottom:.5rem}
+.intake-biz .muted{margin-bottom:1.5rem}
+.biz-item{display:flex;gap:.75rem;margin-bottom:1.25rem;align-items:flex-start}
+.biz-icon{font-size:1.3rem;line-height:1;margin-top:2px;flex-shrink:0}
+.biz-item strong{display:block;font-size:.85rem;color:var(--navy);margin-bottom:.15rem}
+.biz-item p{font-size:.88rem;color:var(--muted);margin:0;line-height:1.45}
+.biz-item a{color:var(--blue)}
+.intake-map{border-radius:var(--radius);overflow:hidden;min-height:380px;box-shadow:var(--shadow)}
 .hero-form{background:var(--white);border-radius:var(--radius);padding:2rem;box-shadow:var(--shadow);border:1px solid var(--border)}
 .hero-form h3{margin-bottom:.25rem;color:var(--navy)}
 .hero-form .form-sub{color:var(--muted);font-size:.88rem;margin-bottom:1.2rem}
@@ -162,7 +165,7 @@ footer a:hover{color:var(--gold)}
 
 /* Responsive */
 @media(max-width:900px){
-  .hero .container,.services-header,.process-grid,.team-grid,.svc-grid,.test-grid,.footer-grid,.intake-wrap{grid-template-columns:1fr}
+  .hero .container,.services-header,.process-grid,.team-grid,.svc-grid,.test-grid,.footer-grid,.intake-3col{grid-template-columns:1fr}
   .hero-form .form-row{grid-template-columns:1fr}
   .cta-banner .container{flex-direction:column;text-align:center}
   nav ul{display:none;position:absolute;top:100%;left:0;right:0;background:white;flex-direction:column;padding:1rem 1.5rem;border-top:1px solid var(--border);box-shadow:var(--shadow)}
@@ -457,21 +460,51 @@ footer a:hover{color:var(--gold)}
 </div>
 </section>
 
-<!-- INTAKE FORM -->
+<!-- INTAKE / CONTACT -->
 <section class="intake-section" id="intake">
 <div class="container">
-  <div class="intake-wrap">
-    <div class="intake-info">
-      <div class="eyebrow" data-i18n="form.eyebrow">Consulta gratuita</div>
-      <h2 data-i18n="form.title">Cuéntanos tu caso</h2>
-      <p data-i18n="form.sub">Déjanos tu información y te compartimos un siguiente paso claro para tu situación migratoria.</p>
-      <ul class="intake-perks">
-        <li data-i18n="form.perk1">Respuesta en menos de 24 horas</li>
-        <li data-i18n="form.perk2">Atención 100% en español</li>
-        <li data-i18n="form.perk3">Toda la información es confidencial</li>
-      </ul>
+  <div class="intake-3col">
+    <!-- Col 1: Business Info -->
+    <div class="intake-biz">
+      <h2 data-i18n="contact.title">Contáctanos</h2>
+      <p class="muted" data-i18n="contact.sub">Estamos aquí para ayudarte a tomar el siguiente paso con confianza.</p>
+      <div class="biz-item">
+        <div class="biz-icon">📍</div>
+        <div>
+          <strong data-i18n="contact.office">Oficina principal</strong>
+          <p>710 13th St, Suite 210<br>San Diego, CA 92101</p>
+        </div>
+      </div>
+      <div class="biz-item">
+        <div class="biz-icon">📞</div>
+        <div>
+          <strong data-i18n="contact.phone">Teléfono</strong>
+          <p><a href="tel:+18584801077">(858) 480-1077</a></p>
+        </div>
+      </div>
+      <div class="biz-item">
+        <div class="biz-icon">💬</div>
+        <div>
+          <strong>WhatsApp</strong>
+          <p><a href="https://wa.me/18588776489">(858) 877-6489</a></p>
+        </div>
+      </div>
+      <div class="biz-item">
+        <div class="biz-icon">🕐</div>
+        <div>
+          <strong data-i18n="contact.hours">Horario</strong>
+          <p data-i18n="contact.schedule">Lun – Vie: 9 AM – 5 PM PST</p>
+        </div>
+      </div>
     </div>
+    <!-- Col 2: Google Map -->
+    <div class="intake-map">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3356.6!2d-117.1628!3d32.7197!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80d9535e1e6b4b0d%3A0x5c0f5c5b5c5b5c5b!2s710%2013th%20St%20%23210%2C%20San%20Diego%2C%20CA%2092101!5e0!3m2!1sen!2sus!4v1700000000000" width="100%" height="100%" style="border:0;border-radius:var(--radius);min-height:380px" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <!-- Col 3: Intake Form -->
     <div class="hero-form">
+      <h3 data-i18n="form.title">Cuéntanos tu caso</h3>
+      <p class="form-sub" data-i18n="form.sub">Déjanos tu información y te compartimos un siguiente paso claro para tu situación migratoria.</p>
       <form onsubmit="handleForm(event)">
         <div class="form-row">
           <input type="text" placeholder="Nombre completo" required data-ph-i18n="form.name">
@@ -571,7 +604,7 @@ es: {
 "form.caseDefault":"¿En qué podemos ayudarte?","form.family":"Visa familiar","form.citizen":"Ciudadanía / N-400","form.other":"Otro / No estoy seguro",
 "form.msg":"Cuéntanos brevemente tu situación (opcional)","form.submit":"Enviar solicitud",
 "form.disc":"Información general con fines educativos. No constituye asesoría legal ni crea relación abogado-cliente. Cada caso es diferente. Resultados varían.",
-"form.eyebrow":"Consulta gratuita","form.perk1":"Respuesta en menos de 24 horas","form.perk2":"Atención 100% en español","form.perk3":"Toda la información es confidencial",
+"contact.title":"Contáctanos","contact.sub":"Estamos aquí para ayudarte a tomar el siguiente paso con confianza.","contact.office":"Oficina principal","contact.phone":"Teléfono","contact.hours":"Horario","contact.schedule":"Lun – Vie: 9 AM – 5 PM PST",
 "svc.eyebrow":"Práctica principal","svc.title":"Servicios legales prioritarios","svc.lead":"Diseñados para resolver casos complejos sin perder claridad ni control del proceso.",
 "svc.vawa.title":"Protección por VAWA","svc.vawa.desc":"Evaluación legal, evidencia estratégica y proceso confidencial.",
 "svc.tvisa.tag":"Visa humanitaria","svc.tvisa.title":"Visa T y permiso de trabajo","svc.tvisa.desc":"Ruta de protección, bona fide determination y plan de estabilidad.",
@@ -616,7 +649,7 @@ en: {
 "form.caseDefault":"How can we help you?","form.family":"Family visa","form.citizen":"Citizenship / N-400","form.other":"Other / Not sure",
 "form.msg":"Briefly tell us your situation (optional)","form.submit":"Submit request",
 "form.disc":"General educational information. Not legal advice and does not create an attorney-client relationship. Every case is different. Results vary.",
-"form.eyebrow":"Free consultation","form.perk1":"Response within 24 hours","form.perk2":"100% Spanish-language support","form.perk3":"All information is confidential",
+"contact.title":"Contact us","contact.sub":"We're here to help you take the next step with confidence.","contact.office":"Main office","contact.phone":"Phone","contact.hours":"Hours","contact.schedule":"Mon – Fri: 9 AM – 5 PM PST",
 "svc.eyebrow":"Core practice","svc.title":"Priority legal services","svc.lead":"Designed to resolve complex cases without losing clarity or process control.",
 "svc.vawa.title":"VAWA Protection","svc.vawa.desc":"Legal evaluation, strategic evidence, and confidential process.",
 "svc.tvisa.tag":"Humanitarian visa","svc.tvisa.title":"T Visa & Work Permit","svc.tvisa.desc":"Protection pathway, bona fide determination, and stability plan.",
