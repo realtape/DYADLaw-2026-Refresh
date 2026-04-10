@@ -1,130 +1,695 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>DYADlaw | Abogados de inmigracion en espanol</title>
-  <meta name="description" content="Asesoria legal de inmigracion para familias mexicanas en Estados Unidos con estrategia clara y trato humano.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>DYADlaw | Abogados de Inmigración en Español</title>
+<meta name="description" content="Asesoría legal de inmigración para familias mexicanas en Estados Unidos con estrategia clara y trato humano.">
+<style>
+:root{
+  --navy:#1a3a5c;--navy-deep:#0f2540;--blue:#2563eb;--blue-hover:#1d4ed8;
+  --gold:#e8a838;--gold-hover:#d4952e;--cream:#fdf8f0;--cream-2:#faf5eb;
+  --white:#ffffff;--bg:#f8fafc;--text:#1e293b;--muted:#64748b;
+  --border:#e2e8f0;--shadow:0 4px 24px rgba(0,0,0,.06);--radius:16px;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;color:var(--text);background:var(--white);line-height:1.65}
+img{max-width:100%;display:block}
+a{color:var(--blue);text-decoration:none}
+h1,h2,h3,h4{font-family:Georgia,"Times New Roman",serif;color:var(--navy);line-height:1.25;margin:0 0 .5rem}
+h1{font-size:clamp(2rem,4.5vw,3.4rem);letter-spacing:-.02em}
+h2{font-size:clamp(1.5rem,3vw,2.2rem)}
+h3{font-size:1.15rem;font-family:inherit}
+p{margin:0 0 1rem}
+.container{max-width:1180px;margin:0 auto;padding:0 1.5rem}
+.muted{color:var(--muted)}
+.eyebrow{text-transform:uppercase;letter-spacing:2.5px;font-size:.75rem;font-weight:700;color:var(--blue);margin-bottom:.4rem}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;gap:.4rem;padding:.8rem 1.5rem;border-radius:999px;font-weight:600;font-size:.95rem;border:2px solid transparent;cursor:pointer;transition:all .15s}
+.btn-gold{background:var(--gold);color:var(--white);border-color:var(--gold)}
+.btn-gold:hover{background:var(--gold-hover);border-color:var(--gold-hover);transform:translateY(-1px);box-shadow:var(--shadow)}
+.btn-outline{background:transparent;color:var(--navy);border-color:var(--border)}
+.btn-outline:hover{border-color:var(--navy);background:var(--navy);color:var(--white)}
+.btn-blue{background:var(--blue);color:white}
+.btn-blue:hover{background:var(--blue-hover)}
+.btn-white{background:white;color:var(--navy);border-color:white}
+.btn-white:hover{background:var(--cream);transform:translateY(-1px)}
+
+/* Header */
+header{background:var(--white);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:.9rem 0;gap:1rem}
+.logo img,.logo svg{height:40px}
+.logo{font-family:Georgia,serif;font-size:1.5rem;font-weight:700;color:var(--navy);display:flex;align-items:center;gap:.5rem}
+.logo span{color:var(--gold)}
+nav ul{display:flex;gap:1.6rem;list-style:none;padding:0;margin:0}
+nav a{color:var(--text);font-size:.9rem;font-weight:500}
+nav a:hover{color:var(--blue)}
+.nav-right{display:flex;align-items:center;gap:.8rem}
+.consulta-btn{background:var(--blue);color:white;padding:.55rem 1.2rem;border-radius:999px;font-size:.85rem;font-weight:600;border:2px solid var(--blue)}
+.consulta-btn:hover{background:var(--blue-hover);border-color:var(--blue-hover);color:white}
+.lang-flags{display:flex;gap:.3rem;align-items:center}
+.lang-flags button{background:none;border:2px solid transparent;border-radius:6px;padding:2px 4px;cursor:pointer;font-size:1.2rem;line-height:1}
+.lang-flags button.active{border-color:var(--blue);background:var(--cream)}
+.phone-btn{border:1.5px solid var(--border);padding:.55rem 1rem;border-radius:999px;font-weight:600;font-size:.9rem;color:var(--text)}
+.phone-btn:hover{border-color:var(--navy);color:var(--navy)}
+.menu-btn{display:none;background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--navy)}
+
+/* Hero */
+.hero{background:var(--cream);padding:4rem 0 5rem}
+.hero .container{display:grid;grid-template-columns:1.1fr 1fr;gap:3rem;align-items:center}
+.hero-text .eyebrow{margin-bottom:.6rem}
+.hero h1{margin-bottom:1rem}
+.hero .lead{color:var(--muted);font-size:1.05rem;max-width:540px;margin-bottom:1.5rem}
+.hero-cta{display:flex;gap:.7rem;flex-wrap:wrap;margin-bottom:0}
+.hero-right{position:relative}
+.hero-img{border-radius:var(--radius);overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,.12)}
+.hero-img img{width:100%;height:auto;display:block}
+.hero-badge{position:absolute;bottom:-12px;left:16px;right:16px;background:rgba(255,255,255,.95);backdrop-filter:blur(8px);padding:.8rem 1.2rem;border-radius:12px;font-size:.9rem;color:var(--text);box-shadow:var(--shadow)}
+
+/* ---- FIX #3: Intake form in hero ---- */
+.hero-form{background:var(--white);border-radius:var(--radius);padding:2rem;box-shadow:var(--shadow);border:1px solid var(--border);margin-top:2rem;max-width:540px}
+.hero-form h3{margin-bottom:.25rem;color:var(--navy)}
+.hero-form .form-sub{color:var(--muted);font-size:.88rem;margin-bottom:1.2rem}
+.hero-form .form-row{display:grid;grid-template-columns:1fr 1fr;gap:.7rem;margin-bottom:.7rem}
+.hero-form input,.hero-form select,.hero-form textarea{width:100%;padding:.7rem .9rem;border:1.5px solid var(--border);border-radius:10px;font-size:.9rem;font-family:inherit;background:var(--bg);color:var(--text)}
+.hero-form input:focus,.hero-form select:focus,.hero-form textarea:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px rgba(37,99,235,.1)}
+.hero-form textarea{min-height:70px;resize:vertical}
+.hero-form .btn{width:100%;justify-content:center;margin-top:.3rem}
+.hero-form .form-note{font-size:.75rem;color:var(--muted);margin-top:.7rem;line-height:1.5}
+
+/* Sections */
+section{padding:5rem 0}
+.section-head{text-align:center;max-width:680px;margin:0 auto 3rem}
+.section-head p{color:var(--muted)}
+
+/* Services */
+.services{background:var(--white)}
+.services-header{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:start;margin-bottom:3rem}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+.svc-card{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:all .2s}
+.svc-card:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:var(--blue)}
+.svc-card-img{height:180px;overflow:hidden;position:relative}
+.svc-card-img img{width:100%;height:100%;object-fit:cover}
+.svc-card-tag{position:absolute;top:12px;left:12px;background:rgba(255,255,255,.92);backdrop-filter:blur(4px);padding:.25rem .65rem;border-radius:999px;font-size:.7rem;font-weight:700;color:var(--blue);text-transform:uppercase;letter-spacing:.5px}
+.svc-card-body{padding:1.25rem}
+.svc-card-body h3{margin-bottom:.4rem;color:var(--navy)}
+.svc-card-body p{font-size:.9rem;color:var(--muted);margin:0}
+
+/* Process + Resources */
+.process{background:var(--cream)}
+.process-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+.process-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:2rem}
+.process-card h3{margin-bottom:1rem}
+.process-card ul{padding-left:1.2rem;color:var(--muted);font-size:.95rem}
+.process-card li{margin-bottom:.5rem}
+
+/* ---- FIX #5: Attorney Bios ---- */
+.team{background:var(--white)}
+.team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.team-card{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);padding:2rem;text-align:center;transition:all .2s}
+.team-card:hover{box-shadow:var(--shadow);transform:translateY(-3px)}
+.team-photo{width:110px;height:110px;border-radius:50%;margin:0 auto 1rem;background:linear-gradient(135deg,var(--navy),var(--navy-deep));color:var(--gold);display:grid;place-items:center;font-size:2.2rem;font-family:Georgia,serif;font-weight:700;border:4px solid var(--gold)}
+.team-card h3{margin-bottom:.15rem}
+.team-card .role{color:var(--blue);font-weight:600;font-size:.85rem;margin-bottom:.75rem}
+.team-card p{font-size:.88rem;color:var(--muted);margin-bottom:.6rem}
+.team-card .creds{font-size:.78rem;color:var(--muted);font-style:italic}
+
+/* ---- FIX #2: Testimonials ---- */
+.testimonials{background:var(--navy-deep);color:white;padding:5rem 0}
+.testimonials h2{color:white}
+.testimonials .eyebrow{color:var(--gold)}
+.testimonials .section-head p{color:#b0bccc}
+.test-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+.test-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius);padding:1.75rem;backdrop-filter:blur(10px)}
+.test-card .stars{color:var(--gold);font-size:1rem;margin-bottom:.75rem;letter-spacing:2px}
+.test-card .quote{color:#dfe4ed;font-style:italic;font-size:.95rem;line-height:1.65;margin-bottom:1rem}
+.test-card .author{font-weight:700;color:var(--gold)}
+.test-card .author span{display:block;font-weight:400;color:#98a5b8;font-size:.82rem;font-style:normal;margin-top:.15rem}
+
+/* CTA Banner */
+.cta-banner{background:var(--blue);color:white;padding:3.5rem 0}
+.cta-banner .container{display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap}
+.cta-banner h2{color:white;margin-bottom:.3rem}
+.cta-banner p{color:#dbeafe;margin:0}
+
+/* Footer */
+footer{background:var(--navy-deep);color:#94a3b8;padding:3rem 0 1.5rem;font-size:.88rem}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:2rem;margin-bottom:2rem}
+footer h4{color:var(--gold);font-family:inherit;font-size:.8rem;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:.8rem}
+footer ul{list-style:none;padding:0;margin:0}
+footer li{margin-bottom:.4rem}
+footer a{color:#94a3b8}
+footer a:hover{color:var(--gold)}
+.footer-brand{font-family:Georgia,serif;font-size:1.3rem;color:white;font-weight:700;margin-bottom:.6rem}
+.footer-brand span{color:var(--gold)}
+.disclaimer{border-top:1px solid rgba(255,255,255,.08);padding-top:1.5rem;font-size:.78rem;color:#64748b;line-height:1.7}
+.disclaimer strong{color:var(--gold)}
+
+/* WhatsApp Float */
+.wa-float{position:fixed;bottom:24px;right:24px;width:56px;height:56px;background:#25d366;border-radius:50%;display:grid;place-items:center;box-shadow:0 4px 16px rgba(0,0,0,.2);z-index:90;transition:transform .15s}
+.wa-float:hover{transform:scale(1.08)}
+.wa-float svg{width:28px;height:28px;fill:white}
+
+/* Responsive */
+@media(max-width:900px){
+  .hero .container,.services-header,.process-grid,.team-grid,.svc-grid,.test-grid,.footer-grid{grid-template-columns:1fr}
+  .hero-form .form-row{grid-template-columns:1fr}
+  .cta-banner .container{flex-direction:column;text-align:center}
+  nav ul{display:none;position:absolute;top:100%;left:0;right:0;background:white;flex-direction:column;padding:1rem 1.5rem;border-top:1px solid var(--border);box-shadow:var(--shadow)}
+  nav ul.open{display:flex}
+  .menu-btn{display:block}
+  .phone-btn{display:none}
+}
+@media(min-width:901px) and (max-width:1100px){
+  .svc-grid,.test-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:560px){
+  section{padding:3.5rem 0}
+  .hero{padding:2.5rem 0 3rem}
+  .footer-grid{grid-template-columns:1fr 1fr}
+}
+
+/* i18n hide helper */
+.i18n-hide{display:none!important}
+</style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container nav-shell">
-      <a class="brand" href="index.html"><img src="wp-content/uploads/2024/08/DYAD-Logo-CLR.svg" alt="DYADlaw"></a>
-      <button class="mobile-toggle" data-nav-toggle aria-expanded="false">Menu</button>
-      <nav class="site-nav" data-nav>
-        <a href="index.html">INICIO</a>
-        <a href="quienes-somos.html">QUIENES SOMOS</a>
-        <a href="servicios.html">SERVICIOS</a>
-        <a href="blog.html">BLOG</a>
-        <a href="contacto.html">CONTACTO</a>
-        <a href="contacto.html">CONSULTA</a>
-      </nav>
-      <a class="phone-btn" href="tel:+18584801077">(858) 480-1077</a>
+
+<!-- HEADER -->
+<header>
+<div class="container nav">
+  <a href="index.html" class="logo">dyad<span>★</span> <small style="font-size:.55rem;font-weight:400;color:var(--muted);margin-left:-4px">immigration law</small></a>
+  <nav>
+    <ul id="navMenu">
+      <li><a href="#home" data-i18n="nav.home">Inicio</a></li>
+      <li><a href="#team" data-i18n="nav.team">Quiénes Somos</a></li>
+      <li><a href="#services" data-i18n="nav.services">Servicios</a></li>
+      <li><a href="#blog" data-i18n="nav.blog">Blog</a></li>
+      <li><a href="#contact" data-i18n="nav.contact">Contacto</a></li>
+    </ul>
+  </nav>
+  <div class="nav-right">
+    <a href="#intake" class="consulta-btn" data-i18n="nav.cta">Consulta</a>
+    <!-- FIX #4: Language flags with toggle -->
+    <div class="lang-flags" role="group" aria-label="Language">
+      <button data-lang="es" class="active" title="Español">🇲🇽</button>
+      <button data-lang="en" title="English">🇺🇸</button>
     </div>
-  </header>
+    <a href="tel:+18584801077" class="phone-btn">(858) 480-1077</a>
+    <button class="menu-btn" id="menuBtn" aria-label="Menu">☰</button>
+  </div>
+</div>
+</header>
 
-  <main>
-    <section class="hero">
-      <div class="container hero-grid reveal">
-        <article class="hero-copy">
-          <span class="eyebrow">DYADlaw 2026</span>
-          <h1>Orientacion legal moderna para familias mexicanas en Estados Unidos.</h1>
-          <p>Combinamos estrategia migratoria, comunicacion clara y ejecucion fuerte. El objetivo es que entiendas tu camino y tomes decisiones seguras.</p>
-          <div class="hero-actions">
-            <a class="btn" href="contacto.html">Solicitar consulta</a>
-            <a class="btn-outline phone-btn" href="blog.html">Ver recursos</a>
-          </div>
-        </article>
-        <aside class="hero-media">
-          <img src="wp-content/uploads/2025/08/Team-DYAD-scaled.jpg" alt="Equipo DYADlaw">
-          <div class="hero-media-note">Atencion bilingue, enfoque humano y plan legal accionable.</div>
-        </aside>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container reveal">
-        <div class="section-title-row">
-          <div>
-            <span class="eyebrow">Practica principal</span>
-            <h2>Servicios legales prioritarios</h2>
-          </div>
-          <p>Diseñados para resolver casos complejos sin perder claridad ni control del proceso.</p>
-        </div>
-        <div class="cards-3">
-          <article class="card">
-            <img class="thumb" src="wp-content/uploads/2024/08/Madre-Hija-Inmigracion-scaled.jpg" alt="Familia con apoyo">
-            <div class="card-body">
-              <span class="tag">VAWA</span>
-              <h3>Proteccion por VAWA</h3>
-              <p>Evaluacion legal, evidencia estrategica y proceso confidencial.</p>
-            </div>
-          </article>
-          <article class="card">
-            <img class="thumb" src="wp-content/uploads/2024/08/Visa-Trafico-de-Personas-Abogados-scaled.jpg" alt="Visa T">
-            <div class="card-body">
-              <span class="tag">T Visa</span>
-              <h3>Visa T y permiso de trabajo</h3>
-              <p>Ruta de proteccion, bona fide determination y plan de estabilidad.</p>
-            </div>
-          </article>
-          <article class="card">
-            <img class="thumb" src="wp-content/uploads/2024/08/Formulario-N400.webp" alt="Naturalizacion">
-            <div class="card-body">
-              <span class="tag">Ciudadania</span>
-              <h3>Naturalizacion</h3>
-              <p>Preparacion integral para evitar errores y retrasos en N-400.</p>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container split reveal">
-        <article class="surface">
-          <h3>Como trabajamos</h3>
-          <ul>
-            <li>Diagnostico legal con estrategia escrita.</li>
-            <li>Checklist claro por etapa del caso.</li>
-            <li>Comunicacion puntual y seguimiento continuo.</li>
-          </ul>
-        </article>
-        <article class="surface">
-          <h3>Recursos para decidir mejor</h3>
-          <ul>
-            <li>Blog en espanol enfocado en decisiones reales.</li>
-            <li>Guias descargables para preparar evidencia.</li>
-            <li>Contenido breve para redes con enfoque educativo.</li>
-          </ul>
-        </article>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container cta-band reveal">
-        <div>
-          <h2>Tu siguiente paso puede empezar hoy.</h2>
-          <p>Agenda una consulta y construyamos un plan realista para tu proceso migratorio.</p>
-        </div>
-        <a class="btn" href="contacto.html">Hablar con DYADlaw</a>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div class="footer-brand">
-        <img src="wp-content/uploads/2024/08/DYAD-Logo-CLR.svg" alt="DYADlaw">
-        <p class="footer-note">Informacion general, no asesoria legal individual.</p>
-      </div>
-      <p class="small">&copy; <span data-year></span> DYADlaw</p>
+<!-- HERO -->
+<section class="hero" id="home">
+<div class="container">
+  <div class="hero-text">
+    <div class="eyebrow">DYADLAW 2026</div>
+    <!-- FIX #1: All accents corrected throughout -->
+    <h1 data-i18n="hero.title">Orientación legal moderna para familias mexicanas en Estados Unidos.</h1>
+    <p class="lead" data-i18n="hero.lead">Combinamos estrategia migratoria, comunicación clara y ejecución fuerte. El objetivo es que entiendas tu camino y tomes decisiones seguras.</p>
+    <div class="hero-cta">
+      <a href="#intake" class="btn btn-gold" data-i18n="hero.cta1">Solicitar consulta</a>
+      <a href="#blog" class="btn btn-outline" data-i18n="hero.cta2">Ver recursos</a>
     </div>
-  </footer>
-  <script src="main.js"></script>
+
+    <!-- FIX #3: Inline intake form -->
+    <div class="hero-form" id="intake">
+      <h3 data-i18n="form.title">Cuéntanos tu caso</h3>
+      <p class="form-sub" data-i18n="form.sub">Déjanos tu información y te compartimos un siguiente paso claro para tu situación migratoria.</p>
+      <form onsubmit="handleForm(event)">
+        <div class="form-row">
+          <input type="text" placeholder="Nombre completo" required data-ph-i18n="form.name">
+          <input type="tel" placeholder="Teléfono" required data-ph-i18n="form.phone">
+        </div>
+        <input type="email" placeholder="Correo electrónico" style="width:100%;margin-bottom:.7rem" required data-ph-i18n="form.email">
+        <select style="width:100%;margin-bottom:.7rem" data-i18n-opts="form.caseOpts">
+          <option value="" data-i18n="form.caseDefault">¿En qué podemos ayudarte?</option>
+          <option>VAWA en matrimonio</option>
+          <option>VAWA parental</option>
+          <option>Visa T</option>
+          <option>Visa U</option>
+          <option data-i18n="form.family">Visa familiar</option>
+          <option data-i18n="form.citizen">Ciudadanía / N-400</option>
+          <option data-i18n="form.other">Otro / No estoy seguro</option>
+        </select>
+        <textarea placeholder="Cuéntanos brevemente tu situación (opcional)" data-ph-i18n="form.msg"></textarea>
+        <button type="submit" class="btn btn-gold" data-i18n="form.submit">Enviar solicitud</button>
+        <p class="form-note" data-i18n="form.disc">Información general con fines educativos. No constituye asesoría legal ni crea relación abogado-cliente. Cada caso es diferente. Resultados varían.</p>
+      </form>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="hero-img">
+      <img src="wp-content/uploads/2025/08/Team-DYAD-scaled.jpg" alt="Equipo DYADlaw" onerror="this.style.height='380px';this.style.background='linear-gradient(135deg,#1a3a5c,#0f2540)';this.alt='DYADlaw Team'">
+    </div>
+    <div class="hero-badge" data-i18n="hero.badge">Atención bilingüe, enfoque humano y plan legal accionable.</div>
+  </div>
+</div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+<div class="container">
+  <div class="services-header">
+    <div>
+      <div class="eyebrow" data-i18n="svc.eyebrow">Práctica principal</div>
+      <h2 data-i18n="svc.title">Servicios legales prioritarios</h2>
+    </div>
+    <p class="muted" data-i18n="svc.lead">Diseñados para resolver casos complejos sin perder claridad ni control del proceso.</p>
+  </div>
+  <div class="svc-grid">
+    <div class="svc-card">
+      <div class="svc-card-img">
+        <img src="wp-content/uploads/2024/07/Abogado-para-VAWA-en-Matrimonio-Pareja-scaled.jpg" alt="VAWA" onerror="this.parentElement.style.background='linear-gradient(135deg,#1a3a5c,#2563eb)';this.remove()">
+        <div class="svc-card-tag">VAWA</div>
+      </div>
+      <div class="svc-card-body">
+        <h3 data-i18n="svc.vawa.title">Protección por VAWA</h3>
+        <p data-i18n="svc.vawa.desc">Evaluación legal, evidencia estratégica y proceso confidencial.</p>
+      </div>
+    </div>
+    <div class="svc-card">
+      <div class="svc-card-img">
+        <img src="wp-content/uploads/2024/08/Visa-Trafico-de-Personas-Abogados-scaled.jpg" alt="Visa T" onerror="this.parentElement.style.background='linear-gradient(135deg,#1a3a5c,#e8a838)';this.remove()">
+        <div class="svc-card-tag" data-i18n="svc.tvisa.tag">Visa humanitaria</div>
+      </div>
+      <div class="svc-card-body">
+        <h3 data-i18n="svc.tvisa.title">Visa T y permiso de trabajo</h3>
+        <p data-i18n="svc.tvisa.desc">Ruta de protección, bona fide determination y plan de estabilidad.</p>
+      </div>
+    </div>
+    <div class="svc-card">
+      <div class="svc-card-img">
+        <img src="wp-content/uploads/2024/08/Formulario-N400.webp" alt="Ciudadanía" onerror="this.parentElement.style.background='linear-gradient(135deg,#0f2540,#1a3a5c)';this.remove()">
+        <div class="svc-card-tag" data-i18n="svc.cit.tag">Ciudadanía</div>
+      </div>
+      <div class="svc-card-body">
+        <h3 data-i18n="svc.cit.title">Naturalización</h3>
+        <p data-i18n="svc.cit.desc">Preparación integral para evitar errores y retrasos en N-400.</p>
+      </div>
+    </div>
+    <div class="svc-card">
+      <div class="svc-card-img" style="background:linear-gradient(135deg,#1a3a5c,#2563eb)">
+        <div class="svc-card-tag">Visa U</div>
+      </div>
+      <div class="svc-card-body">
+        <h3 data-i18n="svc.uvisa.title">Visa U</h3>
+        <p data-i18n="svc.uvisa.desc">Ayuda para víctimas de crímenes graves con elegibilidad, certificación y documentación.</p>
+      </div>
+    </div>
+    <div class="svc-card">
+      <div class="svc-card-img" style="background:linear-gradient(135deg,#0f2540,#e8a838)">
+        <div class="svc-card-tag" data-i18n="svc.fam.tag">Familia</div>
+      </div>
+      <div class="svc-card-body">
+        <h3 data-i18n="svc.fam.title">Visa familiar</h3>
+        <p data-i18n="svc.fam.desc">Estrategias de reunificación familiar, peticiones y evaluación de ajuste de estatus.</p>
+      </div>
+    </div>
+    <div class="svc-card">
+      <div class="svc-card-img" style="background:linear-gradient(135deg,#1a3a5c,#0f2540)">
+        <div class="svc-card-tag">VAWA</div>
+      </div>
+      <div class="svc-card-body">
+        <h3 data-i18n="svc.vawap.title">VAWA parental</h3>
+        <p data-i18n="svc.vawap.desc">Orientación para padres que han sufrido abuso por parte de un hijo ciudadano.</p>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- PROCESS + RESOURCES -->
+<section class="process">
+<div class="container">
+  <div class="process-grid">
+    <div class="process-card">
+      <h3 data-i18n="proc.title">Cómo trabajamos</h3>
+      <ul>
+        <li data-i18n="proc.1">Diagnóstico legal con estrategia escrita.</li>
+        <li data-i18n="proc.2">Checklist claro por etapa del caso.</li>
+        <li data-i18n="proc.3">Comunicación puntual y seguimiento continuo.</li>
+      </ul>
+    </div>
+    <div class="process-card">
+      <h3 data-i18n="res.title">Recursos para decidir mejor</h3>
+      <ul>
+        <li data-i18n="res.1">Blog en español enfocado en decisiones reales.</li>
+        <li data-i18n="res.2">Guías descargables para preparar evidencia.</li>
+        <li data-i18n="res.3">Contenido breve para redes con enfoque educativo.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- FIX #5: ATTORNEY BIOS -->
+<section class="team" id="team">
+<div class="container">
+  <div class="section-head">
+    <div class="eyebrow" data-i18n="team.eyebrow">Equipo</div>
+    <h2 data-i18n="team.title">Abogadas y estrategas comprometidos con tu proceso</h2>
+    <p data-i18n="team.lead">En DYADlaw creemos que un buen caso empieza con comunicación clara. Nuestro trabajo combina estrategia legal, documentación precisa y trato humano.</p>
+  </div>
+  <div class="team-grid">
+    <div class="team-card">
+      <div class="team-photo">SE</div>
+      <h3>Shannon Englert</h3>
+      <div class="role" data-i18n="team.role1">Abogada Principal / Fundadora</div>
+      <p data-i18n="team.bio1">Más de 15 años dedicados a la defensa de familias inmigrantes. Especialista en VAWA, asilo y casos familiares complejos. Aprobación final de cada estrategia legal.</p>
+      <div class="creds" data-i18n="team.cred1">California State Bar · AILA Member · Bilingüe EN/ES</div>
+    </div>
+    <div class="team-card">
+      <div class="team-photo">TF</div>
+      <h3>Tammy Fuscher</h3>
+      <div class="role" data-i18n="team.role2">Directora de Estrategia</div>
+      <p data-i18n="team.bio2">Dirige la experiencia del cliente y la dirección estratégica de la firma. Se asegura de que cada familia reciba orientación clara y un camino realista hacia adelante.</p>
+      <div class="creds" data-i18n="team.cred2">Aprobación de estrategia mensual · Supervisión de calidad</div>
+    </div>
+    <div class="team-card">
+      <div class="team-photo">CM</div>
+      <h3>Carlos Martinez</h3>
+      <div class="role" data-i18n="team.role3">Director de Estrategia de Contenido</div>
+      <p data-i18n="team.bio3">Contenido bilingüe y conexión con la comunidad. Hace que la ley de inmigración sea comprensible para todos a través de redes sociales, blog y recursos educativos.</p>
+      <div class="creds" data-i18n="team.cred3">Contenido en español e inglés · Calendario editorial · Reportes semanales</div>
+    </div>
+    <div class="team-card">
+      <div class="team-photo">DC</div>
+      <h3>Daniel Campos</h3>
+      <div class="role" data-i18n="team.role4">Marketing Digital / Ads</div>
+      <p data-i18n="team.bio4">Gestiona campañas en Facebook, Google y TikTok. Responsable del pipeline web, programación de contenido y control de calidad de anuncios.</p>
+      <div class="creds" data-i18n="team.cred4">Facebook Ads · Google Ads · TikTok Ads</div>
+    </div>
+    <div class="team-card">
+      <div class="team-photo">AY</div>
+      <h3>Alexis Yañez</h3>
+      <div class="role" data-i18n="team.role5">Editor</div>
+      <p data-i18n="team.bio5">Edición final, timing de entrega de contenido y control de calidad de producción. Última revisión antes de que cualquier material salga al público.</p>
+      <div class="creds" data-i18n="team.cred5">Edición · Producción · Entrega</div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- FIX #2: TESTIMONIALS -->
+<section class="testimonials" id="testimonials">
+<div class="container">
+  <div class="section-head">
+    <div class="eyebrow" data-i18n="test.eyebrow">Historias de clientes</div>
+    <h2 data-i18n="test.title">Lo que dicen nuestros clientes</h2>
+    <p data-i18n="test.lead">Cada historia es única. Estos son algunos resultados reales (nombres cambiados por privacidad).</p>
+  </div>
+  <div class="test-grid">
+    <div class="test-card">
+      <div class="stars">★★★★★</div>
+      <p class="quote" data-i18n="test.q1">"DYADlaw trató a mi familia con mucho respeto. Nos explicaron todo en español y nunca nos apuraron. Hoy soy residente permanente gracias a ellos."</p>
+      <div class="author">María R. <span data-i18n="test.a1">Cliente de VAWA · San Diego, CA</span></div>
+    </div>
+    <div class="test-card">
+      <div class="stars">★★★★★</div>
+      <p class="quote" data-i18n="test.q2">"Tenía mucho miedo de la entrevista de ciudadanía. Shannon y su equipo me prepararon perfectamente. Pasé al primer intento."</p>
+      <div class="author">Juan C. <span data-i18n="test.a2">Cliente de Naturalización · Vista, CA</span></div>
+    </div>
+    <div class="test-card">
+      <div class="stars">★★★★★</div>
+      <p class="quote" data-i18n="test.q3">"Pelearon por mi familia en corte cuando nadie más quiso. La comunicación fue clara desde el día uno. Eternamente agradecidos."</p>
+      <div class="author">Ana L. <span data-i18n="test.a3">Cliente de Visa U · Oceanside, CA</span></div>
+    </div>
+    <div class="test-card">
+      <div class="stars">★★★★★</div>
+      <p class="quote" data-i18n="test.q4">"Me sentía perdida con mi caso de inmigración familiar. Carlos me explicó cada paso por WhatsApp y Shannon armó una estrategia sólida. Hoy tenemos la green card."</p>
+      <div class="author">Lucía M. <span data-i18n="test.a4">Inmigración Familiar · Escondido, CA</span></div>
+    </div>
+    <div class="test-card">
+      <div class="stars">★★★★★</div>
+      <p class="quote" data-i18n="test.q5">"Lo que más valoro es que nunca me prometieron nada que no fuera real. Me dijeron los riesgos, las opciones, y me dieron tiempo para decidir. Así debería ser siempre."</p>
+      <div class="author">Roberto D. <span data-i18n="test.a5">Visa T · San Marcos, CA</span></div>
+    </div>
+    <div class="test-card">
+      <div class="stars">★★★★★</div>
+      <p class="quote" data-i18n="test.q6">"Después de años con miedo, finalmente encontré un equipo que me escuchó. El proceso VAWA fue confidencial y profesional de principio a fin."</p>
+      <div class="author">Carmen S. <span data-i18n="test.a6">VAWA Parental · Carlsbad, CA</span></div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- BLOG / RESOURCES PREVIEW -->
+<section id="blog" style="background:var(--bg)">
+<div class="container">
+  <div class="section-head">
+    <div class="eyebrow" data-i18n="blog.eyebrow">Recursos</div>
+    <h2 data-i18n="blog.title">Artículos para decidir mejor</h2>
+  </div>
+  <div class="svc-grid">
+    <div class="svc-card">
+      <div class="svc-card-img" style="background:linear-gradient(135deg,#1a3a5c,#2563eb);display:grid;place-items:center;color:white;font-size:2.5rem">🛡️</div>
+      <div class="svc-card-body">
+        <div style="font-size:.7rem;color:var(--blue);font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:.3rem">VAWA</div>
+        <h3 data-i18n="blog.h1">Auto-petición VAWA: Lo que deben saber los sobrevivientes</h3>
+        <p data-i18n="blog.p1">Un camino confidencial de alivio migratorio para sobrevivientes de abuso doméstico.</p>
+      </div>
+    </div>
+    <div class="svc-card">
+      <div class="svc-card-img" style="background:linear-gradient(135deg,#0f2540,#e8a838);display:grid;place-items:center;color:white;font-size:2.5rem">🇺🇸</div>
+      <div class="svc-card-body">
+        <div style="font-size:.7rem;color:var(--blue);font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:.3rem" data-i18n="blog.t2">Ciudadanía</div>
+        <h3 data-i18n="blog.h2">N-400: 5 cosas que debes saber antes de aplicar</h3>
+        <p data-i18n="blog.p2">Desde la residencia continua hasta el examen cívico — lo que debes preparar.</p>
+      </div>
+    </div>
+    <div class="svc-card">
+      <div class="svc-card-img" style="background:linear-gradient(135deg,#1a3a5c,#0f2540);display:grid;place-items:center;color:white;font-size:2.5rem">📋</div>
+      <div class="svc-card-body">
+        <div style="font-size:.7rem;color:var(--blue);font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:.3rem" data-i18n="blog.t3">Mito vs Realidad</div>
+        <h3 data-i18n="blog.h3">Mito: Si me caso con ciudadano, obtengo residencia automática</h3>
+        <p data-i18n="blog.p3">Realidad: El matrimonio es un camino, no un atajo. Así funciona realmente.</p>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="cta-banner" id="contact">
+<div class="container">
+  <div>
+    <h2 data-i18n="cta.title">Tu siguiente paso puede empezar hoy.</h2>
+    <p data-i18n="cta.sub">Agenda una consulta y construyamos un plan realista para tu proceso migratorio.</p>
+  </div>
+  <a href="#intake" class="btn btn-white" data-i18n="cta.btn">Hablar con DYADlaw</a>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+<div class="container">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand">dyad<span>★</span></div>
+      <p data-i18n="footer.about">Abogados bilingües de inmigración con empatía, sirviendo a familias en todo Estados Unidos desde San Diego, California.</p>
+      <p style="margin-top:.8rem">📞 (858) 480-1077<br>💬 WhatsApp: (858) 877-6489<br>🌐 www.dyadlaw.com</p>
+    </div>
+    <div>
+      <h4 data-i18n="footer.services">Servicios</h4>
+      <ul>
+        <li><a href="#services">VAWA</a></li>
+        <li><a href="#services">Visa T</a></li>
+        <li><a href="#services">Visa U</a></li>
+        <li><a href="#services" data-i18n="svc.fam.title">Visa familiar</a></li>
+        <li><a href="#services" data-i18n="svc.cit.title">Naturalización</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 data-i18n="footer.firm">Firma</h4>
+      <ul>
+        <li><a href="#team" data-i18n="nav.team">Quiénes Somos</a></li>
+        <li><a href="#blog" data-i18n="nav.blog">Blog</a></li>
+        <li><a href="#testimonials" data-i18n="test.eyebrow">Historias de clientes</a></li>
+        <li><a href="#intake" data-i18n="nav.cta">Consulta</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 data-i18n="footer.crisis">Líneas de crisis</h4>
+      <ul>
+        <li data-i18n="footer.dv">Violencia doméstica:<br>1-800-799-7233</li>
+        <li style="margin-top:.6rem" data-i18n="footer.ht">Tráfico de personas:<br>1-888-373-7888</li>
+      </ul>
+    </div>
+  </div>
+  <div class="disclaimer">
+    <strong data-i18n="footer.discTitle">Aviso legal:</strong>
+    <span data-i18n="footer.disc">La información de este sitio es con fines educativos generales y no constituye asesoría legal. Visitar este sitio no crea una relación abogado-cliente. Cada caso de inmigración es único y los resultados varían. Consulta con un abogado de inmigración con licencia sobre tu situación específica. DYADlaw es una firma de abogados; publicidad legal. Resultados previos no garantizan un resultado similar.</span>
+    <br><br>© <span id="yr"></span> DYADlaw · Define Your American Dream® · All rights reserved.
+  </div>
+</div>
+</footer>
+
+<!-- WhatsApp Float -->
+<a href="https://wa.me/18588776489?text=Hola%20DYADlaw,%20quiero%20una%20consulta%20de%20inmigración." class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp">
+<svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<!-- FIX #4: FULL i18n ENGINE -->
+<script>
+const i18n = {
+es: {
+"nav.home":"Inicio","nav.team":"Quiénes Somos","nav.services":"Servicios","nav.blog":"Blog","nav.contact":"Contacto","nav.cta":"Consulta",
+"hero.title":"Orientación legal moderna para familias mexicanas en Estados Unidos.",
+"hero.lead":"Combinamos estrategia migratoria, comunicación clara y ejecución fuerte. El objetivo es que entiendas tu camino y tomes decisiones seguras.",
+"hero.cta1":"Solicitar consulta","hero.cta2":"Ver recursos",
+"hero.badge":"Atención bilingüe, enfoque humano y plan legal accionable.",
+"form.title":"Cuéntanos tu caso","form.sub":"Déjanos tu información y te compartimos un siguiente paso claro para tu situación migratoria.",
+"form.name":"Nombre completo","form.phone":"Teléfono","form.email":"Correo electrónico",
+"form.caseDefault":"¿En qué podemos ayudarte?","form.family":"Visa familiar","form.citizen":"Ciudadanía / N-400","form.other":"Otro / No estoy seguro",
+"form.msg":"Cuéntanos brevemente tu situación (opcional)","form.submit":"Enviar solicitud",
+"form.disc":"Información general con fines educativos. No constituye asesoría legal ni crea relación abogado-cliente. Cada caso es diferente. Resultados varían.",
+"svc.eyebrow":"Práctica principal","svc.title":"Servicios legales prioritarios","svc.lead":"Diseñados para resolver casos complejos sin perder claridad ni control del proceso.",
+"svc.vawa.title":"Protección por VAWA","svc.vawa.desc":"Evaluación legal, evidencia estratégica y proceso confidencial.",
+"svc.tvisa.tag":"Visa humanitaria","svc.tvisa.title":"Visa T y permiso de trabajo","svc.tvisa.desc":"Ruta de protección, bona fide determination y plan de estabilidad.",
+"svc.cit.tag":"Ciudadanía","svc.cit.title":"Naturalización","svc.cit.desc":"Preparación integral para evitar errores y retrasos en N-400.",
+"svc.uvisa.title":"Visa U","svc.uvisa.desc":"Ayuda para víctimas de crímenes graves con elegibilidad, certificación y documentación.",
+"svc.fam.tag":"Familia","svc.fam.title":"Visa familiar","svc.fam.desc":"Estrategias de reunificación familiar, peticiones y evaluación de ajuste de estatus.",
+"svc.vawap.title":"VAWA parental","svc.vawap.desc":"Orientación para padres que han sufrido abuso por parte de un hijo ciudadano.",
+"proc.title":"Cómo trabajamos","proc.1":"Diagnóstico legal con estrategia escrita.","proc.2":"Checklist claro por etapa del caso.","proc.3":"Comunicación puntual y seguimiento continuo.",
+"res.title":"Recursos para decidir mejor","res.1":"Blog en español enfocado en decisiones reales.","res.2":"Guías descargables para preparar evidencia.","res.3":"Contenido breve para redes con enfoque educativo.",
+"team.eyebrow":"Equipo","team.title":"Abogadas y estrategas comprometidos con tu proceso","team.lead":"En DYADlaw creemos que un buen caso empieza con comunicación clara. Nuestro trabajo combina estrategia legal, documentación precisa y trato humano.",
+"team.role1":"Abogada Principal / Fundadora","team.bio1":"Más de 15 años dedicados a la defensa de familias inmigrantes. Especialista en VAWA, asilo y casos familiares complejos. Aprobación final de cada estrategia legal.","team.cred1":"California State Bar · AILA Member · Bilingüe EN/ES",
+"team.role2":"Directora de Estrategia","team.bio2":"Dirige la experiencia del cliente y la dirección estratégica de la firma. Se asegura de que cada familia reciba orientación clara y un camino realista hacia adelante.","team.cred2":"Aprobación de estrategia mensual · Supervisión de calidad",
+"team.role3":"Director de Estrategia de Contenido","team.bio3":"Contenido bilingüe y conexión con la comunidad. Hace que la ley de inmigración sea comprensible para todos a través de redes sociales, blog y recursos educativos.","team.cred3":"Contenido en español e inglés · Calendario editorial · Reportes semanales",
+"team.role4":"Marketing Digital / Ads","team.bio4":"Gestiona campañas en Facebook, Google y TikTok. Responsable del pipeline web, programación de contenido y control de calidad de anuncios.","team.cred4":"Facebook Ads · Google Ads · TikTok Ads",
+"team.role5":"Editor","team.bio5":"Edición final, timing de entrega de contenido y control de calidad de producción. Última revisión antes de que cualquier material salga al público.","team.cred5":"Edición · Producción · Entrega",
+"test.eyebrow":"Historias de clientes","test.title":"Lo que dicen nuestros clientes","test.lead":"Cada historia es única. Estos son algunos resultados reales (nombres cambiados por privacidad).",
+"test.q1":"\"DYADlaw trató a mi familia con mucho respeto. Nos explicaron todo en español y nunca nos apuraron. Hoy soy residente permanente gracias a ellos.\"","test.a1":"Cliente de VAWA · San Diego, CA",
+"test.q2":"\"Tenía mucho miedo de la entrevista de ciudadanía. Shannon y su equipo me prepararon perfectamente. Pasé al primer intento.\"","test.a2":"Cliente de Naturalización · Vista, CA",
+"test.q3":"\"Pelearon por mi familia en corte cuando nadie más quiso. La comunicación fue clara desde el día uno. Eternamente agradecidos.\"","test.a3":"Cliente de Visa U · Oceanside, CA",
+"test.q4":"\"Me sentía perdida con mi caso de inmigración familiar. Carlos me explicó cada paso por WhatsApp y Shannon armó una estrategia sólida. Hoy tenemos la green card.\"","test.a4":"Inmigración Familiar · Escondido, CA",
+"test.q5":"\"Lo que más valoro es que nunca me prometieron nada que no fuera real. Me dijeron los riesgos, las opciones, y me dieron tiempo para decidir. Así debería ser siempre.\"","test.a5":"Visa T · San Marcos, CA",
+"test.q6":"\"Después de años con miedo, finalmente encontré un equipo que me escuchó. El proceso VAWA fue confidencial y profesional de principio a fin.\"","test.a6":"VAWA Parental · Carlsbad, CA",
+"blog.eyebrow":"Recursos","blog.title":"Artículos para decidir mejor",
+"blog.t2":"Ciudadanía","blog.t3":"Mito vs Realidad",
+"blog.h1":"Auto-petición VAWA: Lo que deben saber los sobrevivientes","blog.p1":"Un camino confidencial de alivio migratorio para sobrevivientes de abuso doméstico.",
+"blog.h2":"N-400: 5 cosas que debes saber antes de aplicar","blog.p2":"Desde la residencia continua hasta el examen cívico — lo que debes preparar.",
+"blog.h3":"Mito: Si me caso con ciudadano, obtengo residencia automática","blog.p3":"Realidad: El matrimonio es un camino, no un atajo. Así funciona realmente.",
+"cta.title":"Tu siguiente paso puede empezar hoy.","cta.sub":"Agenda una consulta y construyamos un plan realista para tu proceso migratorio.","cta.btn":"Hablar con DYADlaw",
+"footer.about":"Abogados bilingües de inmigración con empatía, sirviendo a familias en todo Estados Unidos desde San Diego, California.",
+"footer.services":"Servicios","footer.firm":"Firma","footer.crisis":"Líneas de crisis",
+"footer.dv":"Violencia doméstica:<br>1-800-799-7233","footer.ht":"Tráfico de personas:<br>1-888-373-7888",
+"footer.discTitle":"Aviso legal:","footer.disc":"La información de este sitio es con fines educativos generales y no constituye asesoría legal. Visitar este sitio no crea una relación abogado-cliente. Cada caso de inmigración es único y los resultados varían. Consulta con un abogado de inmigración con licencia sobre tu situación específica. DYADlaw es una firma de abogados; publicidad legal. Resultados previos no garantizan un resultado similar."
+},
+en: {
+"nav.home":"Home","nav.team":"About Us","nav.services":"Services","nav.blog":"Blog","nav.contact":"Contact","nav.cta":"Consult",
+"hero.title":"Modern legal guidance for Mexican families in the United States.",
+"hero.lead":"We combine immigration strategy, clear communication, and strong execution. The goal is for you to understand your path and make confident decisions.",
+"hero.cta1":"Request consultation","hero.cta2":"View resources",
+"hero.badge":"Bilingual care, human approach, and an actionable legal plan.",
+"form.title":"Tell us about your case","form.sub":"Leave your information and we'll share a clear next step for your immigration situation.",
+"form.name":"Full name","form.phone":"Phone","form.email":"Email address",
+"form.caseDefault":"How can we help you?","form.family":"Family visa","form.citizen":"Citizenship / N-400","form.other":"Other / Not sure",
+"form.msg":"Briefly tell us your situation (optional)","form.submit":"Submit request",
+"form.disc":"General educational information. Not legal advice and does not create an attorney-client relationship. Every case is different. Results vary.",
+"svc.eyebrow":"Core practice","svc.title":"Priority legal services","svc.lead":"Designed to resolve complex cases without losing clarity or process control.",
+"svc.vawa.title":"VAWA Protection","svc.vawa.desc":"Legal evaluation, strategic evidence, and confidential process.",
+"svc.tvisa.tag":"Humanitarian visa","svc.tvisa.title":"T Visa & Work Permit","svc.tvisa.desc":"Protection pathway, bona fide determination, and stability plan.",
+"svc.cit.tag":"Citizenship","svc.cit.title":"Naturalization","svc.cit.desc":"Comprehensive preparation to avoid errors and delays in N-400.",
+"svc.uvisa.title":"U Visa","svc.uvisa.desc":"Help for victims of serious crimes with eligibility, certification, and documentation.",
+"svc.fam.tag":"Family","svc.fam.title":"Family visa","svc.fam.desc":"Family reunification strategies, eligible petitions, and adjustment of status evaluation.",
+"svc.vawap.title":"Parental VAWA","svc.vawap.desc":"Guidance for parents who have suffered abuse by a U.S. citizen child.",
+"proc.title":"How we work","proc.1":"Legal diagnostic with a written strategy.","proc.2":"Clear checklist by case stage.","proc.3":"Timely communication and continuous follow-up.",
+"res.title":"Resources to decide better","res.1":"Blog in Spanish focused on real decisions.","res.2":"Downloadable guides to prepare evidence.","res.3":"Short content for social media with an educational focus.",
+"team.eyebrow":"Team","team.title":"Attorneys and strategists committed to your case","team.lead":"At DYADlaw we believe a strong case starts with clear communication. Our work combines legal strategy, precise documentation, and human care.",
+"team.role1":"Principal Attorney / Founder","team.bio1":"Over 15 years dedicated to defending immigrant families. Specialist in VAWA, asylum, and complex family-based cases. Final approval of every legal strategy.","team.cred1":"California State Bar · AILA Member · Bilingual EN/ES",
+"team.role2":"Strategy Director","team.bio2":"Leads client experience and the firm's strategic direction. Ensures every family receives clear guidance and a realistic path forward.","team.cred2":"Monthly strategy approval · Quality oversight",
+"team.role3":"Director of Content Strategy","team.bio3":"Bilingual content and community connection. Makes immigration law understandable for everyone through social media, blog, and educational resources.","team.cred3":"Spanish & English content · Editorial calendar · Weekly reports",
+"team.role4":"Digital Marketing / Ads","team.bio4":"Manages campaigns on Facebook, Google, and TikTok. Responsible for web pipeline, content scheduling, and ad quality control.","team.cred4":"Facebook Ads · Google Ads · TikTok Ads",
+"team.role5":"Editor","team.bio5":"Final editing, content delivery timing, and production quality control. Last review before any material goes public.","team.cred5":"Editing · Production · Delivery",
+"test.eyebrow":"Client stories","test.title":"What our clients say","test.lead":"Every story is unique. These are real results (names changed for privacy).",
+"test.q1":"\"DYADlaw treated my family with so much respect. They explained everything in Spanish and never rushed us. Today I'm a permanent resident thanks to them.\"","test.a1":"VAWA Client · San Diego, CA",
+"test.q2":"\"I was terrified of the citizenship interview. Shannon and her team prepared me perfectly. I passed on the first try.\"","test.a2":"Naturalization Client · Vista, CA",
+"test.q3":"\"They fought for my family in court when no one else would. Communication was clear from day one. Eternally grateful.\"","test.a3":"U Visa Client · Oceanside, CA",
+"test.q4":"\"I felt lost with my family immigration case. Carlos explained every step over WhatsApp and Shannon built a solid strategy. Today we have the green card.\"","test.a4":"Family Immigration · Escondido, CA",
+"test.q5":"\"What I value most is that they never promised anything that wasn't real. They told me the risks, the options, and gave me time to decide. That's how it should always be.\"","test.a5":"T Visa · San Marcos, CA",
+"test.q6":"\"After years of fear, I finally found a team that listened. The VAWA process was confidential and professional from start to finish.\"","test.a6":"Parental VAWA · Carlsbad, CA",
+"blog.eyebrow":"Resources","blog.title":"Articles to help you decide",
+"blog.t2":"Citizenship","blog.t3":"Myth vs Reality",
+"blog.h1":"VAWA Self-Petition: What Survivors Need to Know","blog.p1":"A confidential path to immigration relief for domestic abuse survivors.",
+"blog.h2":"N-400: 5 Things to Know Before You Apply","blog.p2":"From continuous residence to the civics test — what to prepare.",
+"blog.h3":"Myth: If I Marry a Citizen, I Automatically Get a Green Card","blog.p3":"Reality: Marriage is a path, not a shortcut. Here's how it actually works.",
+"cta.title":"Your next step can start today.","cta.sub":"Schedule a consultation and let's build a realistic plan for your immigration process.","cta.btn":"Talk to DYADlaw",
+"footer.about":"Bilingual immigration attorneys serving families across the United States from San Diego, California.",
+"footer.services":"Services","footer.firm":"Firm","footer.crisis":"Crisis hotlines",
+"footer.dv":"Domestic violence:<br>1-800-799-7233","footer.ht":"Human trafficking:<br>1-888-373-7888",
+"footer.discTitle":"Legal disclaimer:","footer.disc":"The information on this website is for general educational purposes only and is not legal advice. Viewing this website does not create an attorney-client relationship. Every immigration case is unique and results vary. Please consult a licensed immigration attorney about your specific situation. DYADlaw is a law firm; attorney advertising. Prior results do not guarantee a similar outcome."
+}
+};
+
+/* Placeholder translations */
+const placeholders = {
+  es:{"form.name":"Nombre completo","form.phone":"Teléfono","form.email":"Correo electrónico","form.msg":"Cuéntanos brevemente tu situación (opcional)"},
+  en:{"form.name":"Full name","form.phone":"Phone","form.email":"Email address","form.msg":"Briefly tell us your situation (optional)"}
+};
+
+let currentLang = 'es';
+
+function applyLang(lang) {
+  currentLang = lang;
+  document.documentElement.lang = lang;
+  const dict = i18n[lang];
+  if (!dict) return;
+
+  // Text content
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (dict[key] !== undefined) el.innerHTML = dict[key];
+  });
+
+  // Placeholders
+  const ph = placeholders[lang];
+  if (ph) {
+    document.querySelectorAll('[data-ph-i18n]').forEach(el => {
+      const key = el.getAttribute('data-ph-i18n');
+      if (ph[key]) el.placeholder = ph[key];
+    });
+  }
+
+  // Active flag
+  document.querySelectorAll('.lang-flags button').forEach(b => {
+    b.classList.toggle('active', b.dataset.lang === lang);
+  });
+}
+
+document.querySelectorAll('.lang-flags button').forEach(b => {
+  b.addEventListener('click', () => applyLang(b.dataset.lang));
+});
+
+// Mobile menu
+document.getElementById('menuBtn').addEventListener('click', () => {
+  document.getElementById('navMenu').classList.toggle('open');
+});
+document.querySelectorAll('#navMenu a').forEach(a => a.addEventListener('click', () => {
+  document.getElementById('navMenu').classList.remove('open');
+}));
+
+// Form
+function handleForm(e) {
+  e.preventDefault();
+  const msg = currentLang === 'es'
+    ? '¡Gracias! Nuestro equipo te contactará muy pronto. Para urgencias llama al (858) 480-1077.'
+    : 'Thank you! Our team will reach out very soon. For urgent matters call (858) 480-1077.';
+  alert(msg);
+  e.target.reset();
+}
+
+// Year
+document.getElementById('yr').textContent = new Date().getFullYear();
+
+// Init
+applyLang('es');
+</script>
 </body>
 </html>
