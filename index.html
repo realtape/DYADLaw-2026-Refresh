@@ -40,7 +40,8 @@ p{margin:0 0 1rem}
 /* Header */
 header{background:var(--white);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
 .nav{display:flex;align-items:center;justify-content:space-between;padding:.9rem 0;gap:1rem}
-.logo img,.logo svg{height:40px}
+.logo img,.logo svg{height:40px;width:auto}
+.logo img.logo-dark{filter:brightness(0) saturate(100%) invert(17%) sepia(45%) saturate(800%) hue-rotate(179deg) brightness(93%) contrast(95%)}
 .logo{font-family:Georgia,serif;font-size:1.5rem;font-weight:700;color:var(--navy);display:flex;align-items:center;gap:.5rem}
 .logo span{color:var(--gold)}
 nav ul{display:flex;gap:1.6rem;list-style:none;padding:0;margin:0}
@@ -187,7 +188,7 @@ footer a:hover{color:var(--gold)}
 <!-- HEADER -->
 <header>
 <div class="container nav">
-  <a href="index.html" class="logo"><img src="wp-content/uploads/2024/08/DYAD-Logo-CLR.svg" alt="DYADlaw" style="height:44px;width:auto"></a>
+  <a href="index.html" class="logo"><img src="wp-content/uploads/2024/08/DYAD-Logo-White.png" alt="DYADlaw" class="logo-dark"></a>
   <nav>
     <ul id="navMenu">
       <li><a href="#home" data-i18n="nav.home">Inicio</a></li>
